@@ -10,7 +10,10 @@ Collabratos: <br>
 
 # Things To Do
 
-<li> Geleneksel DQN yerine Double DQN veya Rainbow DQN yapısı tercih edilebilir </li>
+<li> Geleneksel DQN yerine Double DQN veya Rainbow DQN yapısı tercih edilebilir </li><
+<li> Egitim için Paralel Environment kullanılabilir </li>
+<li> Eğitim hızı için komple envoirment GPU alınabilir </li>
+
 
 ## Multi Agent Fikirleri
 <li> Prosedürel harita da olan agent </li>
