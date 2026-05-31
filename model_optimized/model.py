@@ -71,7 +71,7 @@ class DQNAgent:
     def store(self, s, a, r, ns, done):
         self.buf.push(s, a, r, ns, float(done))
         self.step_n += 1                                      # ✅ buraya taşındı
-        self.eps = max(self.eps_min, self.eps * self.eps_dec)
+        #self.eps = max(self.eps_min, self.eps * self.eps_dec)
 
     def learn(self):
         if len(self.buf) < self.batch:
