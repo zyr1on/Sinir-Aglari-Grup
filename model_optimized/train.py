@@ -33,6 +33,8 @@ def train(episodes=2000, render=False, save_path="snake_dqn.pt"):
         if env.score > best:
             best = env.score
 
+        agent.eps = max(agent.eps_min, agent.eps * agent.eps_dec)
+
         if ep % 100 == 0 and best > 0:
             agent.save(save_path)
             print(f"[{ep:5d}/{episodes}]  score={env.score:3d}  "
