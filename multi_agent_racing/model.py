@@ -5,6 +5,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(device)
 
 class QNet(nn.Module):
     def __init__(self, in_dim=11, hidden=256, out_dim=3):
