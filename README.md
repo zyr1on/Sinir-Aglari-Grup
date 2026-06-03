@@ -18,7 +18,7 @@ Collabratos: <br>
 ## Multi Agent Fikirleri
 <li> Prosedürel harita da olan agent </li>
 <li> av-avcı ilişkisi olan agent </li>
-<li> aynı veya farklı harita da yarışan agentlar </li>
+<li> <s>aynı veya farklı harita da yarışan agentlar</s> (Eklendi: `multi_agent_racing` modülü) </li>
 
 # iyileştirilebilir
 1. Double DQN — model.py'da 2 satır değişiklik
@@ -29,3 +29,13 @@ Collabratos: <br>
 6. Reward shaping — yiyeceğe yaklaşınca küçük pozitif, uzaklaşınca küçük negatif ödül ekle seyrek ödülden iyidir
 7. Daha uzun eğitim + learning rate scheduler — 2000 episode yetmeyebilir. optim.lr_scheduler ile lr'yi zamanla düşürmek
 8. Daha büyük/derin ağ — obs genişleyince hidden=256 yetersiz kalabilir, 512'ye çıkılır veya 3. katman eklenir
+
+---
+
+## Yeni Özellik: Çoklu Ajan Yarışı (Multi-Agent Racing)
+Projeye `multi_agent_racing` klasörü altında yeni ve gelişmiş bir yarışma modülü eklenmiştir:
+
+* **Paralel Eğitim:** 4 farklı stratejiye sahip ajan (Fast Learner, Slow Learner, Greedy, Standard) aynı anda eğitilir (`python train.py --render --fps 120`). Ajanların öğrenmeleri birbirleriyle eş zamanlı ilerler.
+* **Skora Dayalı Turnuva Modu:** Eğitilen ajanlar `python race.py --fps 15` komutuyla yarışırlar. Oyun bittiğinde en son hayatta kalan değil, **en yüksek skora ulaşan** kazanır. Varsayılan olarak 5 oyun üzerinden şampiyon belirlenir, beraberlik durumunda (tie-breaker) ek oyunlar oynanır.
+* **Anti-Loop (Döngü Engelleme):** Ajanların yiyecek almadan oyalanıp oyunu uzatmalarını engellemek için, art arda 150 adım boyunca hiçbir yiyecek yenmezse ajan otomatik olarak elenir.
+* **Gelişmiş Veri Görselleştirme:** `python plot.py` kullanılarak, 2x2'lik grafik ızgarasında her ajanın kendi öğrenme serüveni incelenebilir. Grafikler ajanların **anlık puanlarını** kendi renklerinde ve **öğrenme trendlerini** (son 50 oyunun hareketli ortalaması) net bir kırmızı çizgiyle gösterir.
