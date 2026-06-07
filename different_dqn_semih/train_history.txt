@@ -1,0 +1,145 @@
+[Device] Using: cuda (NVIDIA GeForce RTX 4050 Laptop GPU)
+[Config] Episodes=1000  eps_decay=0.99626  grid=20×20
+
+=======================================================
+  Training: DQN  (1000 episodes)
+=======================================================
+
+Agent            Ep   Score   Avg100       ε    Time
+───────────────────────────────────────────────────────
+DQN               1       0     0.00   0.996      0s  (en iyi skor: 0, best model kaydedildi)
+DQN               7       1     0.14   0.974      1s  (en iyi skor: 1, best model kaydedildi)
+DQN              46       2     0.24   0.842      7s  (en iyi skor: 2, best model kaydedildi)
+DQN              50       0     0.22   0.829      8s
+DQN              82       3     0.40   0.736      4s  (en iyi skor: 3, best model kaydedildi)
+DQN             100       3     0.48   0.688      6s
+DQN             150       1     0.90   0.570      6s
+DQN             185       4     1.11   0.500      4s  (en iyi skor: 4, best model kaydedildi)
+DQN             200       1     1.14   0.473      6s
+DQN             237       5     1.31   0.412      4s  (en iyi skor: 5, best model kaydedildi)
+DQN             250       2     1.36   0.392      6s
+DQN             264       9     1.51   0.372      2s  (en iyi skor: 9, best model kaydedildi)
+DQN             294      12     2.01   0.333      8s  (en iyi skor: 12, best model kaydedildi)
+DQN             300       2     2.16   0.325      9s
+DQN             337      13     2.80   0.283      6s  (en iyi skor: 13, best model kaydedildi)
+DQN             350       5     2.98   0.270      8s
+DQN             400       4     3.36   0.224      9s
+DQN             404      15     3.51   0.220      1s  (en iyi skor: 15, best model kaydedildi)
+DQN             442      16     4.33   0.191     11s  (en iyi skor: 16, best model kaydedildi)
+DQN             450       1     4.36   0.185     13s
+DQN             457      17     4.54   0.181      2s  (en iyi skor: 17, best model kaydedildi)
+DQN             500       9     5.79   0.154     15s
+DQN             501      19     5.96   0.153      1s  (en iyi skor: 19, best model kaydedildi)
+DQN             550       1     6.52   0.128     16s
+DQN             561      21     6.61   0.122      3s  (en iyi skor: 21, best model kaydedildi)
+DQN             568      22     6.95   0.119      6s  (en iyi skor: 22, best model kaydedildi)
+DQN             578      26     7.02   0.115      9s  (en iyi skor: 26, best model kaydedildi)
+DQN             600       3     7.29   0.106     18s
+DQN             625      27     7.78   0.096     10s  (en iyi skor: 27, best model kaydedildi)
+DQN             650       3     8.11   0.088     19s
+DQN             662      31     8.85   0.084      7s  (en iyi skor: 31, best model kaydedildi)
+DQN             700      16    10.16   0.073     26s
+DQN             723      38    11.30   0.067     15s  (en iyi skor: 38, best model kaydedildi)
+DQN             750      12    12.41   0.060     29s
+DQN             751      40    12.76   0.060      2s  (en iyi skor: 40, best model kaydedildi)
+DQN             778      47    13.87   0.054     21s  (en iyi skor: 47, best model kaydedildi)
+DQN             800       3    14.15   0.050     37s
+DQN             850       7    15.54   0.050     37s
+DQN             900      10    15.34   0.050     33s
+DQN             950      11    13.70   0.050     27s
+DQN            1000      22    13.35   0.050     31s
+
+[DQN] Training done — 1000 eps in 360.5s  | Best avg100: 15.54
+[DQN] final model kaydedildi → models\dqn.pt
+
+=======================================================
+  Training: DDQN  (1000 episodes)
+=======================================================
+
+Agent            Ep   Score   Avg100       ε    Time
+───────────────────────────────────────────────────────
+DDQN              1       0     0.00   0.996      0s  (en iyi skor: 0, best model kaydedildi)
+DDQN              6       1     0.17   0.978      0s  (en iyi skor: 1, best model kaydedildi)
+DDQN             27       2     0.26   0.904      4s  (en iyi skor: 2, best model kaydedildi)
+DDQN             50       0     0.32   0.829      8s
+DDQN            100       1     0.51   0.688      7s
+DDQN            115       5     0.68   0.650      2s  (en iyi skor: 5, best model kaydedildi)
+DDQN            150       2     1.03   0.570      7s
+DDQN            200       0     1.17   0.473      5s
+DDQN            230       8     1.33   0.423      4s  (en iyi skor: 8, best model kaydedildi)
+DDQN            250       1     1.36   0.392      7s
+DDQN            300       9     2.19   0.325      8s  (en iyi skor: 9, best model kaydedildi)
+DDQN            300       9     2.19   0.325      8s
+DDQN            306      10     2.29   0.318      1s  (en iyi skor: 10, best model kaydedildi)
+DDQN            347      12     2.93   0.273      9s  (en iyi skor: 12, best model kaydedildi)
+DDQN            350       1     2.92   0.270      9s
+DDQN            400       8     3.27   0.224     10s
+DDQN            442      14     3.96   0.191     10s  (en iyi skor: 14, best model kaydedildi)
+DDQN            450       2     4.00   0.185     13s
+DDQN            451      17     4.13   0.185      1s  (en iyi skor: 17, best model kaydedildi)
+DDQN            500      19     5.18   0.154     14s  (en iyi skor: 19, best model kaydedildi)
+DDQN            500      19     5.18   0.154     14s
+DDQN            508      37     5.88   0.149      5s  (en iyi skor: 37, best model kaydedildi)
+DDQN            550       3     7.33   0.128     21s
+DDQN            600      12     8.17   0.106     18s
+DDQN            650       3     9.04   0.088     28s
+DDQN            659      40     9.34   0.085      5s  (en iyi skor: 40, best model kaydedildi)
+DDQN            700       2    10.43   0.073     26s
+DDQN            708      43    10.85   0.071      6s  (en iyi skor: 43, best model kaydedildi)
+DDQN            750      14    12.74   0.060     35s
+DDQN            755      45    13.54   0.059      6s  (en iyi skor: 45, best model kaydedildi)
+DDQN            800      13    15.60   0.050     38s
+DDQN            850      21    15.15   0.050     34s
+DDQN            900      11    13.43   0.050     28s
+DDQN            907      48    13.99   0.050      8s  (en iyi skor: 48, best model kaydedildi)
+DDQN            950      21    14.20   0.050     38s
+DDQN           1000      13    15.60   0.050     35s
+
+[DDQN] Training done — 1000 eps in 389.2s  | Best avg100: 15.60
+[DDQN] final model kaydedildi → models\ddqn.pt
+
+=======================================================
+  Training: Rainbow  (1000 episodes)
+=======================================================
+
+Agent            Ep   Score   Avg100       ε    Time
+───────────────────────────────────────────────────────
+Rainbow           1       0     0.00   Noisy      0s  (en iyi skor: 0, best model kaydedildi)
+Rainbow           3       1     0.33   Noisy      1s  (en iyi skor: 1, best model kaydedildi)
+Rainbow           5       2     0.80   Noisy      1s  (en iyi skor: 2, best model kaydedildi)
+Rainbow           8      26     4.25   Noisy      2s  (en iyi skor: 26, best model kaydedildi)
+Rainbow          10      27     8.60   Noisy      5s  (en iyi skor: 27, best model kaydedildi)
+Rainbow          14      29    11.57   Noisy      9s  (en iyi skor: 29, best model kaydedildi)
+Rainbow          25      30    10.88   Noisy     16s  (en iyi skor: 30, best model kaydedildi)
+Rainbow          36      37    14.03   Noisy     29s  (en iyi skor: 37, best model kaydedildi)
+Rainbow          50      10    14.32   Noisy     41s
+Rainbow          54      44    15.41   Noisy      7s  (en iyi skor: 44, best model kaydedildi)
+Rainbow         100      36    18.54   Noisy    1.1m
+Rainbow         110      54    20.26   Noisy     16s  (en iyi skor: 54, best model kaydedildi)
+Rainbow         150      31    23.74   Noisy    1.2m
+Rainbow         165      55    23.79   Noisy     22s  (en iyi skor: 55, best model kaydedildi)
+Rainbow         200      13    26.15   Noisy    1.5m
+Rainbow         250      23    26.05   Noisy    1.3m
+Rainbow         263      57    27.61   Noisy     31s  (en iyi skor: 57, best model kaydedildi)
+Rainbow         300      48    26.43   Noisy    1.6m
+Rainbow         350      25    25.47   Noisy    1.2m
+Rainbow         400      10    23.04   Noisy    1.3m
+Rainbow         450      23    21.32   Noisy    1.1m
+Rainbow         500      21    22.54   Noisy    1.5m
+Rainbow         550      24    24.89   Noisy    1.2m
+Rainbow         600      40    24.19   Noisy    1.3m
+Rainbow         650      25    23.93   Noisy    1.3m
+Rainbow         700       6    25.29   Noisy    1.7m
+Rainbow         750      13    24.63   Noisy    1.4m
+Rainbow         754      60    24.95   Noisy     12s  (en iyi skor: 60, best model kaydedildi)
+Rainbow         800      13    25.15   Noisy    1.8m
+Rainbow         850      23    28.25   Noisy    1.8m
+Rainbow         900       5    25.14   Noisy    1.2m
+Rainbow         927      61    23.02   Noisy     39s  (en iyi skor: 61, best model kaydedildi)
+Rainbow         950      26    21.56   Noisy    1.2m
+Rainbow        1000      38    21.40   Noisy    1.4m
+
+[Rainbow] Training done — 1000 eps in 1593.4s  | Best avg100: 28.25
+[Rainbow] final model kaydedildi → models\rainbow.pt
+
+[Done] All agents trained. Run `python play.py` to watch them play.
