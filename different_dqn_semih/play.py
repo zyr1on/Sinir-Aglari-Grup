@@ -62,7 +62,6 @@ ROUND_PAUSE_MS = 2500   # ms to show the winner screen before next round
 
 
 def load_agents(device, use_best: bool):
-    
     obs_size  = SnakeEnv.OBS_SIZE
     n_actions = SnakeEnv.N_ACTIONS
 
@@ -94,7 +93,6 @@ def load_agents(device, use_best: bool):
 
 
 def get_greedy_action(agent, state):
-    
     with torch.no_grad():
         s = torch.as_tensor(state, dtype=torch.float32, device=agent.device).unsqueeze(0)
         if agent.noisy:
@@ -233,9 +231,9 @@ def main():
     episode_scores = [0] * n  # score of the current episode (reset each death)
 
     # Between-round display
-    between_round      = False
+    between_round       = False
     between_round_timer = 0
-    winner_idx         = -1
+    winner_idx          = -1
 
     print(f"\n[Tur {round_num} başlıyor]  Q=hızlandır  E=yavaşlat  SPACE=duraklat  ESC=çıkış\n")
 

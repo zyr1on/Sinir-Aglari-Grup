@@ -1,5 +1,4 @@
 """
-
     python train.py --episodes 2000
     python train.py --episodes 1000 --agents dqn ddqn
     python train.py --episodes 2000 --agents dqn ddqn rainbow
@@ -19,8 +18,9 @@ GRID_SIZE   = 20
 EPS_START   = 1.0
 EPS_END     = 0.05
 PRINT_EVERY = 50
-MODELS_DIR  = "models"
 
+MODELS_DIR      = "models"
+MODELS_BEST_DIR = "models_best"  # En iyi modeller için yeni klasör sabiti
 
 
 def calc_eps_decay(episodes: int, eps_start=EPS_START, eps_end=EPS_END, target_frac=0.80):
@@ -53,16 +53,14 @@ def print_row(name, ep, score, avg100, eps_str, elapsed, suffix=""):
     print(line)
 
 
-def train_agent(agent, name, episodes, env_kwargs, key, models_dir):
-    # tek ajan egit
-
+def train_agent(agent, name, episodes, env_kwargs, key, models_dir, models_best_dir):
     env = SnakeEnv(**env_kwargs)
     scores     = []
     avg_scores = []
     start      = time.time()
     last_print = time.time()
 
-    best_score = -1          # en iyi tek-episode skoru
+    best_score = -1          
     first_block = True
 
     for ep in range(1, episodes + 1):
@@ -73,7 +71,8 @@ def train_agent(agent, name, episodes, env_kwargs, key, models_dir):
         # en iyi skor 
         if score > best_score:
             best_score = score
-            best_path  = os.path.join(models_dir, f"{key}_best.pt")
+            # En iyi modeli models_best_dir içine kaydet
+            best_path  = os.path.join(models_best_dir, f"{key}_best.pt")
             agent.save(best_path)
 
             if first_block:
@@ -120,7 +119,9 @@ def main():
     gpu_name = torch.cuda.get_device_name(0) if torch.cuda.is_available() else "CPU"
     print(f"\n[Device] Using: {'cuda' if torch.cuda.is_available() else 'cpu'} ({gpu_name})")
 
+    # Klasörleri oluştur
     os.makedirs(MODELS_DIR, exist_ok=True)
+    os.makedirs(MODELS_BEST_DIR, exist_ok=True)
 
     eps_decay = calc_eps_decay(args.episodes)
     print(f"[Config] Episodes={args.episodes}  eps_decay={eps_decay:.5f}  grid={args.grid}×{args.grid}")
@@ -140,7 +141,11 @@ def main():
         print(f"\n{'='*55}")
         print(f"  Training: {label}  ({args.episodes} episodes)")
         print(f"{'='*55}")
-        train_agent(agent, label, args.episodes, env_kwargs, key, MODELS_DIR)
+        
+        # Güncellenmiş fonksiyon çağrısı
+        train_agent(agent, label, args.episodes, env_kwargs, key, MODELS_DIR, MODELS_BEST_DIR)
+        
+        # Final modeli normal models/ klasörüne kaydedilir
         save_path = os.path.join(MODELS_DIR, f"{key}.pt")
         agent.save(save_path)
         print(f"[{label}] final model saved -> {save_path}")
